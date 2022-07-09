@@ -20,3 +20,21 @@
 
 // 1 <= nums.length <= 104
 // 0 <= nums[i] <= 105
+
+var canJump = function(nums) {
+    let biggestRight = nums[0];
+
+    for (let i = 1; i < nums.length; i += 1) {
+
+        if (biggestRight === 0) return false;
+        biggestRight--;
+        biggestRight = Math.max(biggestRight, nums[i])
+    }
+
+    return true;
+};
+
+console.log(canJump([3, 2, 1, 0, 4]))
+console.log(canJump([2, 1, 1 , 3, 4]))
+console.log(canJump([2, 0, 1, 1, 1]))
+console.log(canJump([1, 0, 3]))
