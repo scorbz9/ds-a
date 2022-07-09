@@ -43,6 +43,7 @@ function fountainActivation(locations) {
         const end = Math.min(i + 1 + locations[i], n);
         maxDistances[start-1] = Math.max(maxDistances[start-1], end);
     }
+    console.log(maxDistances)
 
     // using the greedy approach jump as fas as possible
     let right = maxDistances[0];
@@ -59,3 +60,5 @@ function fountainActivation(locations) {
     return fountainsNeeded;
 
 }
+
+console.log(fountainActivation([2, 0, 0, 0]))
