@@ -42,6 +42,9 @@ function fountainActivation(locations) {
         const start = Math.max(i + 1 - locations[i], 1);
         const end = Math.min(i + 1 + locations[i], n);
         maxDistances[start-1] = Math.max(maxDistances[start-1], end);
+        console.log(i)
+        console.log(start, end)
+        console.log(maxDistances)
     }
     console.log(maxDistances)
 
@@ -50,9 +53,10 @@ function fountainActivation(locations) {
     let nextGreaterRight = right;
     let fountainsNeeded = 1;
 
-    for (let i=1; i<n; i++) {
+    for (let i = 1; i < n; i++) {
         nextGreaterRight = Math.max(nextGreaterRight, maxDistances[i]);
-        if (i===right) {
+        if (i === right) {
+            console.log(i, ' was activated')
             fountainsNeeded++;
             right = nextGreaterRight;
         }
@@ -61,4 +65,7 @@ function fountainActivation(locations) {
 
 }
 
-console.log(fountainActivation([2, 0, 0, 0]))
+// console.log(fountainActivation([2, 0, 0, 0]))
+// console.log(fountainActivation([2, 1, 1, 3, 4]))
+// console.log(fountainActivation([3,4,1,1,0,0]))
+console.log(fountainActivation([1,2,1,0,2,1,0,1]));
