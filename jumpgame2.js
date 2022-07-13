@@ -48,6 +48,7 @@ var jump = function(nums) {
             ladder = nums[i] + i;
         }
 
+
         // keeps track of progress through current ladder;
         stairs--;
 
