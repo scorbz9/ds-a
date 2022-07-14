@@ -53,6 +53,7 @@ function getTotalEfficiency(skill) {
     let sum = skill[0] + skill[right];
     let efficiencySum = 0;
 
+
     while (left < right) {
         if (skill[left] + skill[right] !== sum) return -1;
 
